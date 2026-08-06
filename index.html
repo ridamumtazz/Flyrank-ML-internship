@@ -146,3 +146,145 @@
             </ul>
 
         </section>
+
+                <section>
+
+            <h2>Results</h2>
+
+            <p>
+                The Random Forest model was evaluated using two validation strategies. The time-aware split produced lower
+                prediction errors, while the grouped-by-client split provided a more conservative estimate by testing the
+                model on previously unseen clients.
+            </p>
+
+            <table>
+
+                <tr>
+                    <th>Validation Method</th>
+                    <th>MAE</th>
+                    <th>RMSE</th>
+                </tr>
+
+                <tr>
+                    <td>Time-aware Split</td>
+                    <td>0.2620</td>
+                    <td>2.4575</td>
+                </tr>
+
+                <tr>
+                    <td>Grouped-by-client Split</td>
+                    <td>0.5129</td>
+                    <td>47.0867</td>
+                </tr>
+
+            </table>
+
+            <h3>Figure 1 - Feature Importance</h3>
+
+            <img
+                src="work/figures/feature_importance.png"
+                alt="Feature Importance">
+
+            <p>
+                GSC Clicks and GA4 Sessions contributed the most to the model, while CTR and Engagement Rate had lower
+                importance scores.
+            </p>
+
+            <h3>Figure 2 - Validation Comparison</h3>
+
+            <img
+                src="work/figures/validation_comparison.png"
+                alt="Validation Comparison">
+
+            <p>
+                The grouped validation produced higher prediction error, suggesting that it provides a more realistic
+                estimate of performance on unseen clients.
+            </p>
+
+            <h3>Figure 3 - Action Distribution</h3>
+
+            <img
+                src="work/figures/action_distribution.png"
+                alt="Action Distribution">
+
+            <p>
+                Most content items were assigned to the Monitor category, while a smaller number required Review or
+                Improve actions.
+            </p>
+
+            <h3>Figure 4 - Reason Code Distribution</h3>
+
+            <img
+                src="work/figures/reason_code_distribution.png"
+                alt="Reason Code Distribution">
+
+            <p>
+                Mixed Signals was the most common recommendation reason, followed by Ranking Opportunity and Low Ranking.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Ranked Recommendations</h2>
+
+            <ul>
+
+                <li>Prioritize pages labelled <strong>Improve</strong> because they show the strongest opportunity for optimization.</li>
+
+                <li>Review content with mixed performance signals before making changes.</li>
+
+                <li>Continue monitoring stable pages that currently perform well.</li>
+
+                <li>Use the recommendations as decision-support alongside human expertise.</li>
+
+            </ul>
+
+        </section>
+
+        <section>
+
+            <h2>Limitations</h2>
+
+            <p>
+                This work identifies observed relationships in historical data and does not establish causal effects on
+                search rankings. Results are based on the available dataset and validation strategy and should be used for
+                decision-support rather than as guarantees of future performance.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Reproducibility</h2>
+
+            <p>
+                All notebooks used in this project are available in the repository under the
+                <strong>work/notebooks</strong> directory. The complete workflow includes data preparation, model
+                development, validation, leakage checks and creation of the content action playbook.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Acknowledgments</h2>
+
+            <p>
+                This project was completed as part of the FlyRank Machine Learning Internship and was built using the
+                FlyRank ML Internship dataset.
+            </p>
+
+            <p>
+                Data Credit:
+                <a href="https://flyrank.ai" target="_blank">FlyRank</a>
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+

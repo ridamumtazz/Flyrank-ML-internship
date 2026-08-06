@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Ranking & Discoverability Capstone</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="container">
+
+            <h1>Google Search Ranking & Discoverability Capstone</h1>
+
+            <h2>Refresh / Content Opportunity Scoring</h2>
+
+            <p class="author">
+                <strong>Author:</strong> Rida Mumtaz
+            </p>
+
+            <p>
+                Built using the FlyRank ML Internship Dataset
+            </p>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section>
+
+            <h2>Abstract</h2>
+
+            <p>
+                This project develops a content opportunity scoring model that helps prioritize which content items should
+                be improved, reviewed, or monitored. A Random Forest Regressor was trained using search performance and
+                engagement features from the FlyRank ML Internship dataset. The model was evaluated using both time-aware
+                and grouped-by-client validation to produce more honest performance estimates. The resulting action
+                playbook ranks content items with clear reason codes that support human decision-making. The findings are
+                intended for decision-support and should not be interpreted as proof of future ranking improvements.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Introduction</h2>
+
+            <p>
+                Large websites often contain thousands of pages, making it difficult for SEO teams to decide which pages
+                should be updated first. Manual review is time-consuming and inconsistent. This project aims to create a
+                repeatable scoring approach that identifies content requiring attention based on historical search
+                performance.
+            </p>
+
+            <p>
+                The research question is:
+            </p>
+
+            <blockquote>
+                Which content items should be prioritized for improvement based on historical search performance signals?
+            </blockquote>
+
+            <p>
+                The output supports content teams by producing ranked recommendations rather than replacing human
+                judgement.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Dataset</h2>
+
+            <p>
+                The analysis uses the FlyRank Internship Warehouse dataset from Hugging Face. The work was performed on
+                the <strong>fact_content_daily_performance_sample</strong> table containing approximately 11.7 million
+                rows covering daily search and engagement metrics between January 2025 and June 2026.
+            </p>
+
+            <p>
+                Records with missing target values were removed before training. No client names, domains or private
+                search queries were used during the analysis.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Methodology</h2>
+
+            <h3>Model</h3>
+
+            <p>
+                A Random Forest Regressor was selected because it can model non-linear relationships between multiple
+                search performance signals while providing feature importance values for interpretation.
+            </p>
+
+            <h3>Features</h3>
+
+            <ul>
+
+                <li>GSC Impressions</li>
+
+                <li>GSC Clicks</li>
+
+                <li>CTR</li>
+
+                <li>Average Position</li>
+
+                <li>GA4 Sessions</li>
+
+                <li>Engagement Rate</li>
+
+            </ul>
+
+            <h3>Target</h3>
+
+            <p>
+                The prediction target was the next observation's click count for each content item.
+            </p>
+
+            <h3>Validation</h3>
+
+            <p>
+                Model performance was first measured using a time-aware split and then re-evaluated using a grouped
+                client split to reduce information leakage between training and testing data.
+            </p>
+
+            <h3>Leakage Checks</h3>
+
+            <ul>
+
+                <li>No client identifiers were used as model features.</li>
+
+                <li>No label-derived variables were included.</li>
+
+                <li>No overlapping clients existed between training and testing sets.</li>
+
+                <li>Feature importance was reviewed for suspicious behaviour.</li>
+
+            </ul>
+
+        </section>

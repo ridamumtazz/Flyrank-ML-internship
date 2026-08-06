@@ -4,13 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Google Search Ranking & Discoverability Capstone</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <nav class="navbar">
+    <div class="container nav-container">
+        <h2 class="logo">FlyRank Capstone</h2>
+
+        <ul class="nav-links">
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+            <li><a href="#limitations">Limitations</a></li>
+        </ul>
+    </div>
+</nav>
     <header class="hero">
         <div class="container">
 
@@ -31,10 +50,10 @@
 
     <main class="container">
 
-        <section>
+    
+<section id="abstract">
 
-            <h2>Abstract</h2>
-
+    <h2>Abstract</h2>
             <p>
                 This project develops a content opportunity scoring model that helps prioritize which content items should
                 be improved, reviewed, or monitored. A Random Forest Regressor was trained using search performance and
@@ -89,9 +108,9 @@
 
         </section>
 
-        <section>
+       <section id="method">
 
-            <h2>Methodology</h2>
+    <h2>Methodology</h2>
 
             <h3>Model</h3>
 
@@ -147,9 +166,9 @@
 
         </section>
 
-                <section>
+            <section id="results">
 
-            <h2>Results</h2>
+    <h2>Results</h2>
 
             <p>
                 The Random Forest model was evaluated using two validation strategies. The time-aware split produced lower
@@ -157,6 +176,30 @@
                 model on previously unseen clients.
             </p>
 
+                    <div class="cards">
+
+    <div class="card">
+        <h3>MAE</h3>
+        <p>0.5129</p>
+    </div>
+
+    <div class="card">
+        <h3>RMSE</h3>
+        <p>47.09</p>
+    </div>
+
+    <div class="card">
+        <h3>Queue Size</h3>
+        <p>409,205</p>
+    </div>
+
+    <div class="card">
+        <h3>Validation</h3>
+        <p>Grouped by Client</p>
+    </div>
+
+</div>
+                    
             <table>
 
                 <tr>
@@ -224,9 +267,9 @@
 
         </section>
 
-        <section>
+       <section id="recommendations">
 
-            <h2>Ranked Recommendations</h2>
+    <h2>Ranked Recommendations</h2>
 
             <ul>
 
@@ -242,9 +285,9 @@
 
         </section>
 
-        <section>
+        <section id="limitations">
 
-            <h2>Limitations</h2>
+    <h2>Limitations</h2>
 
             <p>
                 This work identifies observed relationships in historical data and does not establish causal effects on
